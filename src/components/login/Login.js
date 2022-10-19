@@ -1,7 +1,58 @@
+import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
+import useAuth from '../../hooks/useAuth';
+
 import './Login.css'
 import './LoginMobile.css'
 
-export default function Login(){
+const Login = () => {
+
+    const CryptoJS = require("crypto-js");
+    const {login} = useAuth();
+    // const navigate = useNavigate();
+
+    // Criação de um Hook para armazenar os dados de login
+    // que serão inseridos no input, para futura comparação
+    const [ data, setData ] = useState({
+        email: '',
+        password: '',
+        error: '',
+    })
+
+    console.log(data);
+
+
+    // Critografando a senha com a chave 
+    const passwordCrypto = CryptoJS.AES.encrypt('usuario123', 'njndckjsnfkahernjSWELF').toString();
+    // Criando usuário e senha no localstorage para realização do Login
+    let userUse = [{email: 'usuario@gmail.com', password: passwordCrypto}];
+    localStorage.setItem("users_db", JSON.stringify(userUse));
+
+
+    const handleLogin = () => {
+
+        // Se os campos de email e password estiverem vazios ao clicar
+        // no botão, retorna um erro
+        if(!data.email | !data.password){
+            setData({...data, error: "Preencha todos os campos"});
+            return;
+        }
+
+        // Executa a função de login, passando os dados de
+        // email e senha que foram inseridos pelos inputs
+        const res = login(data.email, data.password);
+
+        // Se a função de login for bem realizada, executa:
+        if( res ){
+            setData({...data, error: res});
+            return;
+        }
+
+        window.alert("Login realizado com sucesso!")
+
+        // navigate('/Home')
+    }
 
     return (
         <section id='sectionBackgroundLogin' className='sectionBackgroundLogin'>
@@ -15,16 +66,16 @@ export default function Login(){
 
                     <span>
                         <label>Email</label>
-                        <input type='email' placeholder='hi@example.com'/>
-                    </span>
-                    <span>
+                        <input type='email' placeholder='hi@example.com' value={data.email} onChange={(e) => [setData({...data, email: e.target.value, error: ''})]}/>
                         <label>Password</label>
-                        <input type='password' placeholder='Enter password'/>
+                        <input type='password' placeholder='Enter password' value={data.password} 
+                            onChange={(e) => [setData({...data, password: e.target.value, error: ''})]}
+                        />
                     </span>
 
                     <button id='btnForgotPassword'> Forgot Password? </button>
 
-                    <button id='btnLogin'> Login </button>
+                    <button id='btnLogin' onClick={handleLogin}> Login </button>
                     <button id='btnLoginGoogle'> 
                         <img src="https://img.icons8.com/color/24/000000/google-logo.png"/>
                         <p>Continue with Google</p> 
@@ -90,3 +141,6 @@ export default function Login(){
         </section>
     )
 }
+
+
+export default Login;

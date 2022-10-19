@@ -4,6 +4,7 @@ export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
 
+    const CryptoJS = require("crypto-js")
     const [user, setUser] = useState();
 
     useEffect(() => {
@@ -26,7 +27,6 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-
     const login = ( email, password ) => {
 
         // Armazena em uma constante as informações existentes dentro da 
@@ -38,9 +38,13 @@ export const AuthProvider = ({ children }) => {
 
         if ( hasUser?.length ){
 
+            // Descriptografando o password do localStorage com a chave 
+            const passwordDescrypto = CryptoJS.AES.decrypt(hasUser[0].password, 'njndckjsnfkahernjSWELF');
+            const realPassword = passwordDescrypto.toString(CryptoJS.enc.Utf8)
+
             // Se o usuário filtrado possui as mesmas credenciais armazenadas
             // no localStorage, executa:
-            if( hasUser[0].email === email && hasUser[0].password === password){
+            if( hasUser[0].email === email && realPassword === password){
                 
                 // Cria um token aleatório
                 const token = Math.random().toString(36).substring(2);
