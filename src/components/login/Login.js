@@ -67,7 +67,7 @@ const Login = () => {
                     <span>
                         <label>Email</label>
                         <input type='email' placeholder='hi@example.com' value={data.email} onChange={(e) => [setData({...data, email: e.target.value, error: ''})]}/>
-                        <label>Password</label>
+                        <label style={{marginTop: '2vh'}}>Password</label>
                         <input type='password' placeholder='Enter password' value={data.password} 
                             onChange={(e) => [setData({...data, password: e.target.value, error: ''})]}
                         />

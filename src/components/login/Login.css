@@ -142,10 +142,10 @@
     width: fit-content;
     height: fit-content;
     display: flex;
-    padding: .3vw 1vw;
+    padding: .5vh 2vh;
     color: white;
     border-radius: 10px 10px 10px 0px;
-    font-size: .8vw;
+    font-size: 1.3vh;
     background-color: #7065f0;
     margin: 1.5vh 0vw 1vh -2.5vw;
 }
@@ -166,9 +166,9 @@
 #triangulo-para-baixo {
     width: 0; 
     height: 0; 
-    border-left: 1vw solid transparent;
-    border-top: .8vw solid #6256e2;
-    margin: 1.4vw 0vw 0vh -1vw;
+    border-left: 1.8vh solid transparent;
+    border-top: 1.8vh solid #6256e2;
+    margin: 2.3vh 0vw 0vh -2vh;
     position: absolute;
     z-index: 0;
 }
