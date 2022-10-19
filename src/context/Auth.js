@@ -69,7 +69,41 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("user_token");
     }
 
-    return <AuthContext.Provider value={{user, login: !!user, login, signOut}}>
+    const signup = (email, password) => {
+
+        // Guarda em uma constante o conteúdo da chave "users_db"
+        // no localStorage
+        const usersStorage = JSON.parse(localStorage.getItem("users_db"));
+
+        // Verifica se o usuário que está tentando se cadastrar
+        // já existe
+        const hasUser = usersStorage?.filter((user) => user.email === email);
+
+        // Se o usuário existir, executa:
+        if (hasUser?.length) {
+            return "Já existe uma conta com esse e-mail";
+        }
+
+        let newUser;
+
+        // Se existir credenciais no localStorage, executa:
+        if (usersStorage) {
+            // Atribui o novo usuário a um array com o usuário que
+            // já está cadastrado
+            newUser = [...usersStorage, { email, password }];
+        } 
+        // Se não existir:
+        else {
+            newUser = [{ email, password }];
+        }
+
+        // Armazena ou substitui as credenciais no localStorage
+        localStorage.setItem("users_db", JSON.stringify(newUser));
+
+        return;
+    }
+
+    return <AuthContext.Provider value={{user, signed: !!user, login, signup, signOut}}>
         { children }
     </AuthContext.Provider>
 }
