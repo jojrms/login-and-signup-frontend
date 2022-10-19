@@ -1,0 +1,252 @@
+.sectionBackgroundLogin{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+
+.sectionBackgroundLogin aside:nth-of-type(1){
+    display: grid;
+    grid-template-rows: 10vh auto;
+}
+.sectionBackgroundLogin aside:nth-of-type(1) div:nth-of-type(1){
+    border-bottom: 4px solid #f7f7fc;
+    display: flex;
+}
+.icon{
+    width: 12vh;
+    background-image: url(../images/Icon.svg);
+    background-size: contain;
+    margin-left: 5vh;
+}
+
+.divExbInputs{
+    width: fit-content;
+    margin: auto;
+}
+.divExbInputs h1{
+    font-size: 4vh;
+    margin: 0;
+}
+.divExbInputs p{
+    font-size: 1.7vh;
+    margin: 0vh 0vw 3vh 0vw;
+    color: #9295a3;
+}
+.divExbInputs span{
+    display: grid;
+    margin-bottom: 2vh;
+}
+.divExbInputs span label{
+    margin-bottom: .5vh;
+    font-size: 1.5vh;
+}
+.divExbInputs span input{
+    background-color: #f7f7fd;
+    border: 2px solid #f5f4fc;
+    padding: 1vh 2vh;
+    border-radius: 5px;
+}
+.divExbInputs button{
+    border-radius: 10px;
+}
+#btnForgotPassword{
+    width: fit-content;
+    display: block;
+    color: #857bf2;
+    margin: -1vh auto auto auto;
+    font-size: 1.3vh;
+}
+#btnLogin{
+    width: -webkit-fill-available;
+    padding: 1vh;
+    background-color: #7065f0;
+    color: white;
+    letter-spacing: .5px;
+    margin: 2vh 0vw 1.5vh 0vw;
+}
+#btnLoginGoogle{
+    width: -webkit-fill-available;
+    display: flex;
+    padding: 1vh;
+    border: 1px solid #e2e7f1;
+    letter-spacing: .5px;
+    font-weight: 600;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+#btnLoginGoogle p{
+    font-size: 1.3vh;
+    margin: .2vh 0vh 0vh 2vh;
+    color: black;
+}
+
+
+#pSignUp{
+    font-size: 1.5vh;
+}
+.pSignUp{
+    text-align: center;
+}
+.pSignUp a{
+    color: black;
+    font-weight: 600;
+    border-bottom: 1px solid black;
+    margin-left: .2vw;
+}
+
+
+
+
+.asideBackgroundDecoration{
+    background-color: #f7f7fc;
+    display: grid;
+    grid-template-rows: auto 25%;
+}
+
+.articleExbHouseDec{
+    width: 40vh;
+    min-height: 50vh;
+    display: grid;
+    padding: 1.5vw;
+    grid-template-rows: 40% auto;
+    background-color: white;
+    border: 1px solid #e4e9f1;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.021);
+    margin: auto auto 2vh auto;
+    grid-template-rows: 40% min-content auto;
+}
+.spanImage{
+    background-image: url(https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    background-size: cover;
+    display: block;
+    border-radius: 10px;
+}
+.spanDetailsInitial{
+    height: fit-content;
+    display: grid;
+}
+.spanDecPopular{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    padding: .3vw 1vw;
+    color: white;
+    border-radius: 10px 10px 10px 0px;
+    font-size: .8vw;
+    background-color: #7065f0;
+    margin: 1.5vh 0vw 1vh -2.5vw;
+}
+.divFav{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 100%;
+    position: absolute;
+    border: 2px solid #e2e7f1;
+    margin: 3vh 0vh 0vh 37vh;
+    background-image: url(https://img.icons8.com/material-outlined/96/463ad3/hearts.png);
+    background-size: 50%;
+    cursor: pointer;
+}
+.divFav:hover{
+    background-image: url(https://img.icons8.com/material-rounded/24/463ad3/hearts.png);
+}
+#triangulo-para-baixo {
+    width: 0; 
+    height: 0; 
+    border-left: 1vw solid transparent;
+    border-top: .8vw solid #6256e2;
+    margin: 1.4vw 0vw 0vh -1vw;
+    position: absolute;
+    z-index: 0;
+}
+.spanDetailsInitial{
+    border-bottom: 2px solid rgb(247, 247, 247);
+}
+.spanDetailsInitial h2{
+    font-size: 2.4vh;
+    letter-spacing: .5px;
+    margin: 0;
+}
+.spanDetailsInitial p{
+    font-size: 1.6vh;
+    color: #8a8d9b;
+    margin: 0vh 0vw 2vh 0vw;
+}
+
+.spanDetailsHouse{
+    height: fit-content;
+    display: flex;
+    grid-gap: .5vw;
+}
+.spanDetailsHouse div{
+    height: fit-content;
+    display: flex;
+    color: rgb(48, 48, 48);
+    font-size: 1.8vh;
+}
+.spanDetailsHouse div i{
+    width: 1.3vw;
+    height: 1.3vw;
+    display: block;
+    background-size: contain;
+    margin: auto .5vw auto auto;
+
+}
+.spanDetailsHouse div:nth-of-type(1) i{
+    background-image: url(https://img.icons8.com/fluency-systems-regular/96/6256e2/double-bed.png);
+}
+.spanDetailsHouse div:nth-of-type(2) i{
+    background-image: url(https://img.icons8.com/fluency-systems-regular/96/6256e2/shower-and-tub.png);
+}
+.spanDetailsHouse div:nth-of-type(3) i{
+    background-image: url(https://img.icons8.com/fluency-systems-filled/48/6256e2/border-style.png);
+}
+
+.spanPrice{
+    height: fit-content;
+    background-color: #f7f7fd;
+    border: 2px solid #f1f1fb;
+    border-radius: 10px;
+    padding: 1vw;
+}
+.spanPrice div h3{
+    margin: 0vh 0vw .5vh 0vw;
+    font-size: 1.5vh;
+}
+.spanPrice div h2{
+    height: fit-content;
+    color: #7065f0;
+    font-size: 2.3vh;
+    display: flex;
+    margin: 0;
+}
+.spanPrice div h2 p{
+    color: #b1b3c1;
+    font-weight: 500;
+    margin: .6vh 0vw 0vh .5vw;
+    font-size: 1.5vh;
+}
+
+.divMessage{
+    width: 65%;
+    margin: 5vh auto auto auto;
+}
+.divMessage span{
+    display: flex;
+}
+.divMessage span i{
+    width: 3vh;
+    background-image: url(../images/logo.svg);
+    background-size: contain;
+    margin-left: .5vh;
+}
+.divMessage p{
+    color: #8e929e;
+}
+.divMessage p a{
+    color: #9289f3;
+}
