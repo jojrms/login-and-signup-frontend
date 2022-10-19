@@ -49,6 +49,9 @@
     padding: 1vh 2vh;
     border-radius: 5px;
 }
+.divExbInputs span input::placeholder{
+    font-size: 1.5vh;
+}
 .divExbInputs button{
     border-radius: 10px;
 }
@@ -66,6 +69,7 @@
     color: white;
     letter-spacing: .5px;
     margin: 2vh 0vw 1.5vh 0vw;
+    font-size: 1.5vh;
 }
 #btnLoginGoogle{
     width: -webkit-fill-available;
@@ -78,9 +82,14 @@
     margin-bottom: 2vh;
 }
 #btnLoginGoogle p{
-    font-size: 1.3vh;
-    margin: .2vh 0vh 0vh 2vh;
+    font-size: 1.5vh;
+    margin: .2vh auto 0vh 2vh;
     color: black;
+}
+#btnLoginGoogle img{
+    width: 2vh;
+    height: 2vh;
+    margin: auto 0vh auto auto;
 }
 
 
@@ -237,6 +246,7 @@
 }
 .divMessage span{
     display: flex;
+    font-size: 2vh;
 }
 .divMessage span i{
     width: 3vh;
@@ -245,6 +255,7 @@
     margin-left: .5vh;
 }
 .divMessage p{
+    font-size: 1.8vh;
     color: #8e929e;
 }
 .divMessage p a{

@@ -1,0 +1,45 @@
+@media only screen and (max-width: 600px) {
+    
+    #sectionBackgroundLogin{
+        display: block;
+    }
+    .sectionBackgroundLogin aside:nth-of-type(1){
+        height: 100%;
+    }
+    .divExbInputs{
+        margin-top: 13%;
+    }
+    .divExbInputs h1{
+        font-size: 7vw;
+        text-align: center;
+    }
+    .divExbInputs p{
+        font-size: 4vw;
+    }
+    .divExbInputs span label, #btnForgotPassword{
+        font-size: 3.8vw;
+    }
+    .divExbInputs span input{
+        padding: 1.5vh 2vh;
+    }
+    #btnForgotPassword{
+        margin-bottom: 1.5vh;
+    }
+    .divExbInputs span input::placeholder, #btnLogin, #btnLoginGoogle{
+        font-size: 3.5vw;
+        padding: 1.5vh;
+        margin-bottom: 2.5vh;
+    }
+    #btnLoginGoogle p, #pSignUp{
+        font-size: 3.5vw;
+    }
+    #btnLoginGoogle img{
+        width: 2.5vh;
+        height: 2.5vh;
+    }
+
+
+    #asideBackgroundDecoration{
+        display: none;
+    }
+}

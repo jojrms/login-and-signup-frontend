@@ -1,4 +1,5 @@
 import './Login.css'
+import './LoginMobile.css'
 
 export default function Login(){
 
@@ -34,7 +35,7 @@ export default function Login(){
             </aside>
 
 
-            <aside className='asideBackgroundDecoration'>
+            <aside className='asideBackgroundDecoration' id='asideBackgroundDecoration'>
 
                 <article className='articleExbHouseDec'>
 
