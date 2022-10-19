@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import useAuth from '../../hooks/useAuth';
 
@@ -10,7 +10,7 @@ const Login = () => {
 
     const CryptoJS = require("crypto-js");
     const {login} = useAuth();
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     // Criação de um Hook para armazenar os dados de login
     // que serão inseridos no input, para futura comparação
@@ -51,7 +51,6 @@ const Login = () => {
 
         window.alert("Login realizado com sucesso!")
 
-        // navigate('/Home')
     }
 
     return (
@@ -81,7 +80,7 @@ const Login = () => {
                         <p>Continue with Google</p> 
                     </button>
 
-                    <p className='pSignUp' id='pSignUp'>Don't have an account? <a> Sign up for free</a> </p>
+                    <p className='pSignUp' id='pSignUp'>Don't have an account? <a onClick={() => {navigate('/create-account')}}> Sign up for free</a> </p>
                 </div>
             </aside>
 
