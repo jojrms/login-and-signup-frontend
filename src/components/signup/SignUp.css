@@ -1,0 +1,151 @@
+.sectionSignupBackground{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 22% auto;
+}
+.sectionSignupBackground::-webkit-scrollbar{
+    display: none;
+}
+.sectionSignupBackground aside:nth-of-type(1){
+    width: 100%;
+    background-color: #f7f7fc;
+    padding: 1%;
+    display: grid;
+    grid-template-rows: min-content auto;
+    overflow: hidden;
+}
+.sectionSignupBackground aside:nth-of-type(1) i{
+    width: 3vh;
+    height: 3vh;
+    background-image: url(../images/logo.svg);
+    background-size: 60%;
+    border-radius: 10px;
+    margin: 3vh auto 0vh 8%;
+    display: block;
+    background-color: #e5e5f7;
+    padding: 1vh;
+}
+.sectionSignupBackground aside:nth-of-type(1) div{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    color: #443aad;
+}
+.h1Porcentage{
+    width: 100%;
+    text-align: center;
+    margin: 25vh 0 0 0;
+    font-size: 5vh;
+    letter-spacing: .5px;
+    font-weight: 500;
+}
+.h2Phrase{
+    text-align: center;
+    width: 90%;
+    letter-spacing: .5px;
+    font-weight: 500;
+    margin: auto;
+}
+.sectionSignupBackground aside:nth-of-type(1) p{
+    width: fit-content;
+    margin: 1vh 5% 0vh auto
+}
+
+.spanWaves{
+    width: 103%;
+    height: 35vh;
+    background-image: url(../images/Waves.svg);
+    background-size: cover;
+    background-position-y: 1vh;
+    margin: auto 0 0 -1%;
+}
+
+
+.asideInfoToSignUp{
+    color: #000929;
+    display: grid;
+    grid-template-rows: min-content min-content auto auto;
+    padding: 2vh 2vh 2vh 10vw;
+}
+.asideInfoToSignUp h1{
+    margin: 7vh 0 0 0;
+    font-size: 3vh;
+}
+.asideInfoToSignUp p{
+    font-size: 1.8vh;
+    height: fit-content;
+    margin: 0;
+    color: #9295a3;
+    letter-spacing: .3px;
+}
+.asideInfoToSignUp div:nth-of-type(1){
+    width: 70%;
+    margin-top: 4vh;
+    display: grid;
+    grid-gap: 2vh;
+}
+.asideInfoToSignUp div:nth-of-type(1) span{
+    display: grid;
+}
+.asideInfoToSignUp div:nth-of-type(1) label, .asideInfoToSignUp div:nth-of-type(1) input::placeholder{
+    font-size: 1.5vh;
+}
+.asideInfoToSignUp div:nth-of-type(1) input{
+    padding: 1.5vh;
+    border-radius: 10px;
+    margin-top: .5vh;
+    border: 2px solid #f7f7fc;
+    font-size: 1.5vh;
+}
+
+.asideInfoToSignUp div:nth-of-type(2){
+    display: flex;
+    grid-gap: 2vh;
+    margin-top: 2vh;
+}
+#spanCheckboxDec{
+    width: 2vh;
+    height: 2vh;
+    display: flex;
+    position: absolute;
+    border: 2px solid #e5e5f7;
+    border-radius: 5px;
+    z-index: -1;
+}
+#spanCheckboxDec canvas{
+    width: 70%;
+    height: 70%;
+    margin: auto auto .25vh auto;
+    border-radius: 3px;
+    background-color: #d5d5f1;
+    display: none;
+}
+#inputCheckboxTerms{
+    width: 2.5vh;
+    height: 2.5vh;
+    margin: 0vh;
+    opacity: 0;
+    cursor: pointer;
+}
+#inputCheckboxTerms:checked ~ #spanCheckboxDec canvas{
+    display: block;
+}
+.asideInfoToSignUp div:nth-of-type(2) p{
+    color: #000929;
+    margin-top: .2vh;
+    font-size: 1.5vh;
+}
+.asideInfoToSignUp div:nth-of-type(2) p a{
+    color: #7065f0;
+}
+
+.btnContinueSignup{
+    width: fit-content;
+    background-color: #7065f0;
+    color: white;
+    padding: 1vh 2.5vh;
+    border-radius: 10px;
+    margin: 0 0 auto 0;
+    font-size: 1.6vh;
+}
