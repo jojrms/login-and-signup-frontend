@@ -88,13 +88,21 @@ export const AuthProvider = ({ children }) => {
 
         // Se existir credenciais no localStorage, executa:
         if (usersStorage) {
+
+            // Critografando a senha com a chave 
+            const passwordCrypto = CryptoJS.AES.encrypt(password, 'njndckjsnfkahernjSWELF').toString();
+
+
             // Atribui o novo usuário a um array com o usuário que
             // já está cadastrado
-            newUser = [...usersStorage, { email, password }];
+            newUser = [...usersStorage, { email, passwordCrypto }];
         } 
         // Se não existir:
         else {
-            newUser = [{ email, password }];
+            // Critografando a senha com a chave 
+            const passwordCrypto = CryptoJS.AES.encrypt(password, 'njndckjsnfkahernjSWELF').toString();
+
+            newUser = [{ email, passwordCrypto }];
         }
 
         // Armazena ou substitui as credenciais no localStorage
