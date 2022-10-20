@@ -46,10 +46,12 @@
     letter-spacing: .5px;
     font-weight: 500;
     margin: auto;
+    font-size: 2.5vh;
 }
 .sectionSignupBackground aside:nth-of-type(1) p{
     width: fit-content;
-    margin: 1vh 5% 0vh auto
+    margin: 1vh 5% 0vh auto;
+    font-size: 1.5vh;
 }
 
 .spanWaves{
