@@ -24,7 +24,7 @@ export default function SignUp(){
 
         // Se os campos de email e password estiverem vazios ao clicar
         // no botão, retorna um erro
-        if( !data.email | !data.password ){
+        if( !data.fullName | !data.email | !data.password | !data.confirmPassword ){
             setData({...data, error: "Preencha todos os campos"});
             return;
         } 
