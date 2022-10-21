@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import useAuth from '../../hooks/useAuth'
 
@@ -6,6 +7,7 @@ import './SignUp.css'
 
 export default function SignUp(){
 
+    const navigate = useNavigate();
     const {signup} = useAuth();
 
     // Criação de um Hook para armazenar os dados do usuário
@@ -18,7 +20,6 @@ export default function SignUp(){
         companyName: '',
         error: '',
     })
-    console.log(data);
 
     const handleSignup = () => {
 
@@ -26,12 +27,15 @@ export default function SignUp(){
         // no botão, retorna um erro
         if( !data.fullName | !data.email | !data.password | !data.confirmPassword ){
             setData({...data, error: "Preencha todos os campos"});
+            alert(data.error)
             return;
-        } 
+        }
+        
         // Se os campos de password e confirm password não forem iguais,
         // retorna um erro
         else if ( data.password !== data.confirmPassword ){
             setData({...data, error: "As senhas não coincidem. Verifique-as"});
+            alert(data.error)
             return;
         }
 
@@ -42,7 +46,9 @@ export default function SignUp(){
             return;
         }
 
-        window.alert("Você se cadastrou com sucesso!")
+        window.alert("Você se cadastrou com sucesso!");
+        navigate('/');
+        return;
     }
 
     return(
@@ -50,8 +56,11 @@ export default function SignUp(){
             <aside>
                 <i/>
                 <div>
+                    <div className='divSteps'>
+
+                    </div>
                     <h1 className='h1Porcentage'>0%</h1>
-                    <h2 className='h2Phrase'>“A nossa casa é o nosso túmulo, em vida.”</h2>
+                    <h2 className='h2Phrase'>"A nossa casa é o nosso túmulo, em vida"</h2>
                     <p>- Rosália Lopes</p>    
                 </div>
                 <span className='spanWaves'/>
@@ -66,30 +75,39 @@ export default function SignUp(){
                         <label>Full Name*</label>
                         <input type='text' placeholder='Ex.: Ania Thompson'
                             onChange={(e) => [setData({...data, fullName: e.target.value, error: ''})]}
+                            required
                         />    
+                        <p className='error'>{data.error}</p>
                     </span>
                     <span>
                         <label>Email*</label>
                         <input type='email' placeholder='youremail@email.com'
                             onChange={(e) => [setData({...data, email: e.target.value, error: ''})]}
-                        />        
+                            required
+                        />   
+                        <p className='error'>{data.error}</p>
                     </span>
                     <span>
                         <label>Password*</label>
                         <input type='password' placeholder='Enter your password'
                             onChange={(e) => [setData({...data, password: e.target.value, error: ''})]}
-                        />        
+                            required
+                        />  
+                        <p className='error'>{data.error}</p>
                     </span>
                     <span>
                         <label>Confirm Password*</label>
                         <input type='password' placeholder='Confirm your password'
                             onChange={(e) => [setData({...data, confirmPassword: e.target.value, error: ''})]}
-                        />        
+                            required
+                        />  
+                        <p className='error'>{data.error}</p>
                     </span>
                     <span>
                         <label>Company Name</label>
                         <input type='text' placeholder='Ex.: My Company'
                             onChange={(e) => [setData({...data, companyName: e.target.value, error: ''})]}
+                            required
                         />        
                     </span>
                 </div>
