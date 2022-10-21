@@ -36,6 +36,17 @@ const Login = () => {
         // no botão, retorna um erro
         if(!data.email | !data.password){
             setData({...data, error: "Preencha todos os campos"});
+
+            const error = document.querySelectorAll('#error');
+            for ( let i = 0; i < error.length; i++ ){
+                error[i].style.display = 'block';
+            }
+
+            const input = document.querySelectorAll('#inputInfoLogin');
+            for ( let i = 0; i < input.length; i++ ){
+                input[i].style.border = '1.5px solid red';
+            }
+
             return;
         }
 
@@ -46,30 +57,54 @@ const Login = () => {
         // Se a função de login for bem realizada, executa:
         if( res ){
             setData({...data, error: res});
+
+            const error = document.getElementById('error');
+            for ( let i = 0; i < error.length; i++ ){
+                error[i].style.display = 'block';
+            }
+
+            const input = document.querySelectorAll('#inputInfoLogin');
+            for ( let i = 0; i < input.length; i++ ){
+                input[i].style.border = '1.5px solid red';
+            }
+
             return;
         }
 
         window.alert("Login realizado com sucesso!")
+        navigate('/Home');
+        return;
 
     }
 
     return (
         <section id='sectionBackgroundLogin' className='sectionBackgroundLogin'>
             <aside>
-                <div>
+                <header>
                     <i className='icon'/>
-                </div>
+                </header>
                 <div className='divExbInputs'>
                     <h1>Welcome back</h1>
                     <p>Welcome back! Please enter your details.</p>
 
                     <span>
-                        <label>Email</label>
-                        <input type='email' placeholder='hi@example.com' value={data.email} onChange={(e) => [setData({...data, email: e.target.value, error: ''})]}/>
-                        <label style={{marginTop: '2vh'}}>Password</label>
-                        <input type='password' placeholder='Enter password' value={data.password} 
-                            onChange={(e) => [setData({...data, password: e.target.value, error: ''})]}
-                        />
+
+                        <div id='divContentInput'>
+                            <label>Email</label>
+                            <input id='inputInfoLogin' type='email' placeholder='hi@example.com' value={data.email} 
+                                onChange={(e) => [setData({...data, email: e.target.value, error: ''})]}
+                            />
+                            <p id='error'>{data.error}</p>    
+                        </div>
+
+                        <div id='divContentInput'>
+                            <label style={{marginTop: '2vh'}}>Password</label>
+                            <input id='inputInfoLogin' type='password' placeholder='Enter password' value={data.password} 
+                                onChange={(e) => [setData({...data, password: e.target.value, error: ''})]}
+                            />
+                            <p id='error'>{data.error}</p>    
+                        </div>                      
+
                     </span>
 
                     <button id='btnForgotPassword'> Forgot Password? </button>

@@ -11,7 +11,7 @@
     display: grid;
     grid-template-rows: 10vh auto;
 }
-.sectionBackgroundLogin aside:nth-of-type(1) div:nth-of-type(1){
+header{
     border-bottom: 4px solid #f7f7fc;
     display: flex;
 }
@@ -39,15 +39,24 @@
     display: grid;
     margin-bottom: 2vh;
 }
-.divExbInputs span label{
+.divExbInputs span div label{
+    width: 100%;
     margin-bottom: .5vh;
     font-size: 1.5vh;
+    display: block;
 }
-.divExbInputs span input{
+.divExbInputs span div input{
+    width: -webkit-fill-available;
     background-color: #f7f7fd;
     border: 2px solid #f5f4fc;
     padding: 1vh 2vh;
     border-radius: 5px;
+}
+#error{
+    color: red;
+    font-size: 1.3vh;
+    display: none;
+    margin: 1vh 0 0 0;
 }
 .divExbInputs span input::placeholder{
     font-size: 1.5vh;
