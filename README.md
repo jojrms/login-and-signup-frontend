@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# SOBRE O PROJETO
+Este projeto conta com duas páginas desenvolvidas: Login e Cadastro.
+Os dados do usuário cadastrado, bem como do que se cadastrará, está salvo no localStorage, com a chave "users_db". As informações visíveis são o email e a senha, sendo a última exibida após ser criptografada no padrão AES, através da biblioteca Crypto, do ReactJS.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O mockup de ambas foi retirada do site Dribbble, tendo as atribuições citadas abaixo, no setor MOCKUP. 
 
-## Available Scripts
+## LOGIN
+Nesta página, o usuário conta com dois input's que receberão o email e senha. Ao ocorrer da forma esperada, retorna um alerta. Caso dê erro, retorna o mesmo no formato HTML. 
 
-In the project directory, you can run:
+As credenciais estão no setor DADOS. 
 
-### `npm start`
+Esta página está desenvolvida, principalmente, nas unidades "%" e "vh".
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### DADOS
+email: usuario@gmail.com
+senha: usuario123
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## CADASTRO
+Na página de cadastro, o usuário informa seu nome completo, email, senha, confirmação de senha e o nome da empresa na qual trabalha, sendo esta última uma informação não obrigatória de ser preenchida. Ao ocorrer da forma esperada, retorna um alerta. Caso dê erro, retorna o mesmo no formato HTML.
 
-### `npm test`
+## REQUISIÇÕES
+React = ^18.2.0
+Node = >=6.0.0
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## LINGUAGENS, FRAMEWORKS E BIBLIOTECAS
+Linguagem: JavaScript 
+Framework: React.js 
+Bibliotecas: React-router-dom e crypto-js 
 
-### `npm run build`
+## MOCKUP
+O mockup usado foi retirado do site Dribbble. Algumas modificações foram realizadas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### LOGIN (MOCKUP)
+Usuário: Illiyin Studio
+Link: https://dribbble.com/shots/17872229-Estatery-Login-Create-Account
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### CADASTRO (MOCKUP)
+Usuário: Illiyin Studio
+Link: https://dribbble.com/shots/17872229-Estatery-Login-Create-Account
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### LOGOTIPO (MOCKUP)
+Usuário: Illiyin Studio
+Link: https://dribbble.com/shots/17872229-Estatery-Login-Create-Account
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## COMO INICIAR
+1. Clone este repositório no CMD utilizando o comando "git clone URL_AQUI",
+2. Após finalizado, entre no arquivo e abra em seu editor de código-fonte,
+3. Realize um npm install para baixar todos os módulos node,
+4. Finalize com um 'npm start' para abrir um localhost
