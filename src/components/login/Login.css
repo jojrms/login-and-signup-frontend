@@ -55,7 +55,6 @@ header{
 #error{
     color: red;
     font-size: 1.3vh;
-    display: none;
     margin: 1vh 0 0 0;
 }
 .divExbInputs span input::placeholder{

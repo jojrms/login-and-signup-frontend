@@ -8,7 +8,6 @@ import './LoginMobile.css'
 
 const Login = () => {
 
-    const CryptoJS = require("crypto-js");
     const {login} = useAuth();
     const navigate = useNavigate();
 
@@ -20,14 +19,17 @@ const Login = () => {
         error: '',
     })
 
-    console.log(data);
 
-
-    // Critografando a senha com a chave 
-    const passwordCrypto = CryptoJS.AES.encrypt('usuario123', 'njndckjsnfkahernjSWELF').toString();
-    // Criando usuário e senha no localstorage para realização do Login
-    let userUse = [{email: 'usuario@gmail.com', password: passwordCrypto}];
-    localStorage.setItem("users_db", JSON.stringify(userUse));
+    // Criando arrow function para guardar a criptografia da senha
+    const CryptoJS = require("crypto-js");
+    const criptografiaPassword = () => {
+        // Critografando a senha com a chave 
+        const passwordCrypto = CryptoJS.AES.encrypt('usuario123', 'njndckjsnfkahernjSWELF').toString();
+        // Criando usuário e senha no localstorage para realização do Login
+        let userUse = [{email: 'usuario@gmail.com', password: passwordCrypto}];
+        localStorage.setItem("users_db", JSON.stringify(userUse));    
+    }
+    criptografiaPassword();
 
 
     const handleLogin = () => {
@@ -36,17 +38,6 @@ const Login = () => {
         // no botão, retorna um erro
         if(!data.email | !data.password){
             setData({...data, error: "Preencha todos os campos"});
-
-            const error = document.querySelectorAll('#error');
-            for ( let i = 0; i < error.length; i++ ){
-                error[i].style.display = 'block';
-            }
-
-            const input = document.querySelectorAll('#inputInfoLogin');
-            for ( let i = 0; i < input.length; i++ ){
-                input[i].style.border = '1.5px solid red';
-            }
-
             return;
         }
 
@@ -57,17 +48,6 @@ const Login = () => {
         // Se a função de login for bem realizada, executa:
         if( res ){
             setData({...data, error: res});
-
-            const error = document.getElementById('error');
-            for ( let i = 0; i < error.length; i++ ){
-                error[i].style.display = 'block';
-            }
-
-            const input = document.querySelectorAll('#inputInfoLogin');
-            for ( let i = 0; i < input.length; i++ ){
-                input[i].style.border = '1.5px solid red';
-            }
-
             return;
         }
 
